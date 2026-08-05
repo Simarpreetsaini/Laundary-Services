@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Booking Web App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Logo</div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Contact Us</a>
+        <a href="#">About Us</a>
+      </div>
+
+      <div class="nav-right">
+        <div class="user-pill">
+          <span class="user-name">Username</span>
+          <button class="logout-btn" title="Logout">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="main-container">
+      <div class="left-section">
+        <h2>Added Items</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Service Name</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="cart-table-body"></tbody>
+        </table>
+
+        <div id="empty-msg" class="empty-cart-msg">
+          <div class="info-circle">i</div>
+          <div><strong>No Items Added</strong></div>
+          <div style="font-size: 11px">
+            Add items to the cart from the service tab
+          </div>
+        </div>
+
+        <div class="total-amount">
+          <span>Total Amount</span>
+          <span id="total-price">₹0</span>
+        </div>
+        <div class="booking-form">
+          <h3>Book Now</h3>
+          <div class="input-row">
+            <div class="input-group">
+              <label for="fullname">Full Name</label>
+              <input type="text" id="fullname" placeholder="Enter full name" />
+            </div>
+          </div>
+          <div class="input-row split">
+            <div class="input-group">
+              <label for="email">Email ID</label>
+              <input type="email" id="email" placeholder="mailid@gmail.com" />
+            </div>
+            <div class="input-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="000000000" />
+            </div>
+          </div>
+          <button class="book-btn" id="book-now-btn">Book now</button>
+          <div
+            id="booking-msg"
+            class="booking-status-msg"
+            style="display: none"
+          >
+            <span class="msg-icon">ⓘ</span>
+            <span id="msg-text"></span>
+          </div>
+        </div>
+      </div>
+      <div class="right-section">
+        <h2>Browse Our Services</h2>
+        <p class="subtext">
+          Click on the add to cart button to add the services to your cart or
+          press skip
+        </p>
+
+        <div class="service-card">
+          <h3 id="service-title">Dry Cleaning</h3>
+          <img
+            id="service-img"
+            src="images/dry-cleaning.jpg"
+            alt="Service Image"
+          />
+          <div class="service-info">
+            <span id="service-name-label" style="font-weight: bold"
+              >Dry Cleaning</span
+            >
+            <span id="service-price" class="service-price">₹200.00</span>
+          </div>
+          <div class="card-actions">
+            <button class="skip-btn" id="skip-btn">Skip Item ➔</button>
+            <button class="add-btn" id="add-btn">Add Item ➕</button>
+          </div>
+        </div>
+
+        <div class="instructions">
+          <span>ℹ️</span> Add the items to the cart and book now
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
