@@ -1,29 +1,24 @@
-# Service Booking Web Application
+# Service Booking App
 
-A clean, responsive, and interactive frontend web application built with HTML, CSS, and Vanilla JavaScript. The application allows users to browse through service offerings, add or skip items dynamically, and complete a service booking form with real-time UI validation feedback.
+## About
 
----
+I made this project using HTML, CSS and JavaScript.
 
-## 🌟 Features
+Users can see different services, add them to the cart and book them.
 
-- **Dynamic Service Navigation:** Browse available services one by one using **Add Item** and **Skip Item** actions.
-- **Interactive Cart System:** 
-  - Automatically calculates the total price of selected services.
-  - Generates an itemized list dynamically.
-  - Displays a clean "No Items Added" fallback view when the cart is empty.
-- **Header & Navigation:**
-  - Modern centered navigation menu links.
-  - Styled user pill display with an inline SVG exit/logout icon.
-- **Dynamic Booking Validation:**
-  - In-page dynamic feedback messages (success/error states) directly below the submit button.
-  - Requires all user details (Name, Email, Phone) and at least one cart item before booking confirmation.
+## What I Learned
 
----
+- How to use arrays
+- How to add items to a cart
+- How to change HTML using JavaScript
+- How to use button click events
 
-## 📁 Project Structure
+## Challenges
 
-```text
-├── index.html       # Application HTML layout and UI components
-├── style.css        # Responsive styling and custom UI elements
-├── script.js        # Core logic, cart handling, and form validation
-└── images/          # Service images directory
+At first I was confused about updating the cart and total price.
+
+After trying different examples, I understood how to add items and calculate the total.
+
+## How to Run
+
+Open index.html in your browser.
