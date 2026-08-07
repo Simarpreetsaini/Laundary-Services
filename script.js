@@ -1,149 +1,91 @@
 let services = [
+  { name: "Dry Cleaning", price: 200, img: "images/dry-cleaning.jpg" },
+  { name: "Leather Cleaning", price: 999, img: "images/leather-cleaning.jpg" },
+  { name: "Ironing", price: 30, img: "images/ironing.jpg" },
   {
-    id: 1,
-    name: "Dry Cleaning",
-    price: 200,
-    img: "images/dry-cleaning.jpg",
-  },
-  {
-    id: 2,
-    name: "Leather & Suede Cleaning",
-    price: 999,
-    img: "images/leather-cleaning.jpg",
-  },
-  {
-    id: 3,
-    name: "Ironing",
-    price: 30,
-    img: "images/ironing.jpg",
-  },
-  {
-    id: 4,
     name: "Wedding Dress Cleaning",
     price: 2400,
     img: "images/wedding-dress.jpg",
   },
-  {
-    id: 5,
-    name: "Wash And Fold",
-    price: 140,
-    img: "images/wash-and-fold.jpg",
-  },
-  {
-    id: 6,
-    name: "Stain Removal",
-    price: 500,
-    img: "images/stain-removal.jpg",
-  },
+  { name: "Wash And Fold", price: 140, img: "images/wash-and-fold.jpg" },
+  { name: "Stain Removal", price: 500, img: "images/stain-removal.jpg" },
 ];
 
-let currentServiceIndex = 0;
-let addedServices = [];
+let index = 0;
+let cart = [];
 
-let serviceTitle = document.getElementById("service-title");
-let serviceName = document.getElementById("service-name-label");
-let servicePrice = document.getElementById("service-price");
-let serviceImg = document.getElementById("service-img");
-
-let cartTable = document.getElementById("cart-table-body");
-let emptyMsg = document.getElementById("empty-msg");
-let totalPrice = document.getElementById("total-price");
-
-let bookingMsg = document.getElementById("booking-msg");
-let msgText = document.getElementById("msg-text");
-
-function showService() {
-  let service = services[currentServiceIndex];
-
-  serviceTitle.innerHTML = service.name;
-  serviceName.innerHTML = service.name;
-  servicePrice.innerHTML = "₹" + service.price;
-  serviceImg.src = service.img;
+function updateService() {
+  let item = services[index];
+  document.getElementById("service-title").innerText = item.name;
+  document.getElementById("service-name-label").innerText = item.name;
+  document.getElementById("service-price").innerText = "₹" + item.price;
+  document.getElementById("service-img").src = item.img;
 }
 
-function showCart() {
-  cartTable.innerHTML = "";
+function updateCart() {
+  let table = document.getElementById("cart-table-body");
+  let emptyMsg = document.getElementById("empty-msg");
+  let totalText = document.getElementById("total-price");
 
-  if (addedServices.length == 0) {
+  table.innerHTML = "";
+
+  if (cart.length === 0) {
     emptyMsg.style.display = "block";
-    totalPrice.innerHTML = "₹0";
+    totalText.innerText = "₹0";
     return;
   }
 
   emptyMsg.style.display = "none";
-
   let total = 0;
 
-  for (let i = 0; i < addedServices.length; i++) {
-    let item = addedServices[i];
-
-    total = total + item.price;
-
-    let row = document.createElement("tr");
-
+  for (let i = 0; i < cart.length; i++) {
+    total = total + cart[i].price;
+    let row = table.insertRow();
     row.innerHTML =
       "<td>" +
       (i + 1) +
-      "</td>" +
-      "<td>" +
-      item.name +
-      "</td>" +
-      "<td>₹" +
-      item.price +
+      "</td><td>" +
+      cart[i].name +
+      "</td><td>₹" +
+      cart[i].price +
       "</td>";
-
-    cartTable.appendChild(row);
   }
 
-  totalPrice.innerHTML = "₹" + total;
-}
-
-function nextService() {
-  currentServiceIndex++;
-
-  if (currentServiceIndex == services.length) {
-    currentServiceIndex = 0;
-  }
-
-  showService();
+  totalText.innerText = "₹" + total;
 }
 
 document.getElementById("add-btn").addEventListener("click", function () {
-  addedServices.push(services[currentServiceIndex]);
-
-  showCart();
-
-  nextService();
+  cart.push(services[index]);
+  updateCart();
+  index = (index + 1) % services.length;
+  updateService();
 });
 
 document.getElementById("skip-btn").addEventListener("click", function () {
-  nextService();
+  index = (index + 1) % services.length;
+  updateService();
 });
 
 document.getElementById("book-now-btn").addEventListener("click", function () {
   let name = document.getElementById("fullname").value;
   let email = document.getElementById("email").value;
   let phone = document.getElementById("phone").value;
+  let msg = document.getElementById("booking-msg");
+  let msgText = document.getElementById("msg-text");
 
-  bookingMsg.style.display = "flex";
+  msg.style.display = "flex";
 
-  if (name == "" || email == "" || phone == "") {
-    bookingMsg.className = "booking-status-msg error";
-    msgText.innerHTML = "Please fill all details.";
-
-    return;
+  if (name === "" || email === "" || phone === "") {
+    msg.className = "booking-status-msg error";
+    msgText.innerText = "Please fill all details.";
+  } else if (cart.length === 0) {
+    msg.className = "booking-status-msg error";
+    msgText.innerText = "Please add at least one service.";
+  } else {
+    msg.className = "booking-status-msg success";
+    msgText.innerText = "Booking completed successfully.";
   }
-
-  if (addedServices.length == 0) {
-    bookingMsg.className = "booking-status-msg error";
-    msgText.innerHTML = "Please add at least one service.";
-
-    return;
-  }
-
-  bookingMsg.className = "booking-status-msg success";
-  msgText.innerHTML = "Booking completed successfully.";
 });
 
-showService();
-showCart();
+updateService();
+updateCart();
