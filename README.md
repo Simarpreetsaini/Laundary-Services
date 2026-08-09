@@ -2,38 +2,36 @@
 
 ## About
 
-I made this project to practice HTML, CSS and JavaScript.
-
-The project lets users:
-
-- View different services
-- Add a service to the cart
-- Book a service
-- Skip to the next service
-- See the total price
-- Fill in the booking form
+I made this project to practice HTML, CSS and JavaScript. It allows users to view services, add them to a cart, skip services, check the total price, and book a service.
 
 ## What I Learned
 
-- How to use `getElementById()`
-- How to store services in an array
-- How button click events work
-- How to add items to a cart
-- How to calculate the total price
-- How to validate form inputs
-- How to separate sections using CSS
+* Using `getElementById()` and `innerText`
+* Handling button clicks with `addEventListener()`
+* Using arrays to store services and cart items
+* Updating the webpage using the DOM
+* Calculating totals with a simple loop
+* Validating form inputs with `if` conditions
 
-## Buttons
+## Learning & Problem Solving
 
-**Add to Cart** adds the current service to the cart.
+I built the project step by step, starting with the HTML and then adding JavaScript functionality.
 
-**Book Now** is a separate option for booking the current service.
+I had problems keeping the service and cart information updated. I solved this using an `index` variable and functions to update the service and cart.
 
-**Skip** moves to the next service.
+I also tested the Add, Skip and Book buttons, including empty-form and empty-cart cases, and checked the element IDs when something did not work.
 
-## Problems I Faced
+## Beginner DOM Concepts
 
-At first, I had difficulty separating the cart and booking sections. I fixed it by using separate boxes and simple CSS.
+The project uses beginner-friendly DOM methods such as:
+
+* `getElementById()`
+* `innerText`
+* `style.display`
+* `addEventListener()`
+* `.value`
+* `.length`
+* `insertRow()`
 
 ## How to Run
 
