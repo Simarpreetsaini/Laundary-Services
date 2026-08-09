@@ -54,12 +54,14 @@ function updateCart() {
   totalText.innerText = "₹" + total;
 }
 
-document.getElementById("add-btn").addEventListener("click", function () {
-  cart.push(services[index]);
-  updateCart();
-  index = (index + 1) % services.length;
-  updateService();
-});
+document
+  .getElementById("add-to-cart-btn")
+  .addEventListener("click", function () {
+    cart.push(services[index]);
+    updateCart();
+    index = (index + 1) % services.length;
+    updateService();
+  });
 
 document.getElementById("skip-btn").addEventListener("click", function () {
   index = (index + 1) % services.length;
