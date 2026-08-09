@@ -284,3 +284,11 @@ td {
   align-items: center;
   gap: 5px;
 }
+.add-to-cart-btn {
+  background: #52c41a;
+  border: none;
+  color: white;
+  padding: 6px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
