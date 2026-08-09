@@ -40,30 +40,31 @@
     </nav>
     <div class="main-container">
       <div class="left-section">
-        <h2>Added Items</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>S.No</th>
-              <th>Service Name</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody id="cart-table-body"></tbody>
-        </table>
-
-        <div id="empty-msg" class="empty-cart-msg">
-          <div class="info-circle">i</div>
-          <div><strong>No Items Added</strong></div>
-          <div style="font-size: 11px">
-            Add items to the cart from the service tab
+        <!-- Added Items Box -->
+        <div class="cart-box">
+          <h2>Added Items</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Service Name</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody id="cart-table-body"></tbody>
+          </table>
+          <div id="empty-msg" class="empty-cart-msg">
+            <div class="info-circle">i</div>
+            <div><strong>No Items Added</strong></div>
+            <div style="font-size: 11px">
+              Add items to the cart from the service tab
+            </div>
+          </div>
+          <div class="total-amount">
+            <span>Total Amount</span> <span id="total-price">₹0</span>
           </div>
         </div>
-
-        <div class="total-amount">
-          <span>Total Amount</span>
-          <span id="total-price">₹0</span>
-        </div>
+        <!-- Book Now Box -->
         <div class="booking-form">
           <h3>Book Now</h3>
           <div class="input-row">
@@ -78,8 +79,8 @@
               <input type="email" id="email" placeholder="mailid@gmail.com" />
             </div>
             <div class="input-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" placeholder="000000000" />
+              <label for="phone">Password</label>
+              <input type="password" id="phone" placeholder="******" />
             </div>
           </div>
           <button class="book-btn" id="book-now-btn">Book now</button>
@@ -88,8 +89,7 @@
             class="booking-status-msg"
             style="display: none"
           >
-            <span class="msg-icon">ⓘ</span>
-            <span id="msg-text"></span>
+            <span class="msg-icon">ⓘ</span> <span id="msg-text"></span>
           </div>
         </div>
       </div>
