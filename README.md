@@ -1,38 +1,34 @@
-# Service Booking Project
+# Service Booking Web App
 
-## About
+A simple web application built with HTML, CSS, and JavaScript[cite: 1, 3, 4]. Users can browse services, add them to a cart, skip items, and submit a booking form[cite: 1, 3].
 
-I made this project to practice HTML, CSS and JavaScript. It allows users to view services, add them to a cart, skip services, check the total price, and book a service.
+---
 
 ## What I Learned
 
-* Using `getElementById()` and `innerText`
-* Handling button clicks with `addEventListener()`
-* Using arrays to store services and cart items
-* Updating the webpage using the DOM
-* Calculating totals with a simple loop
-* Validating form inputs with `if` conditions
+Building this project helped me learn web development step-by-step and practice fixing common bugs[cite: 2].
 
-## Learning & Problem Solving
+### JavaScript & DOM Basics
 
-I built the project step by step, starting with the HTML and then adding JavaScript functionality.
+* **Selecting Elements:** Used `document.getElementById()` to select elements and change text or visibility[cite: 3].
+* **Click Events:** Used `addEventListener()` to handle button clicks[cite: 3].
+* **Updating HTML:** Used `insertRow()` and `innerHTML` to display cart items dynamically[cite: 3].
 
-I had problems keeping the service and cart information updated. I solved this using an `index` variable and functions to update the service and cart.
+### Logic & Arrays
 
-I also tested the Add, Skip and Book buttons, including empty-form and empty-cart cases, and checked the element IDs when something did not work.
+* **Storing Data:** Kept service details organized inside an array of objects[cite: 3].
+* **Loops:** Used a `for` loop to calculate the total price of items in the cart[cite: 3].
+* **Cycling Items:** Used the modulo operator `(index + 1) % services.length` to keep cycling through services endlessly[cite: 3].
 
-## Beginner DOM Concepts
+### Mistakes & Problem Solving
 
-The project uses beginner-friendly DOM methods such as:
+* **Matching HTML & JS:** Learned that if an `id` in JavaScript does not match the HTML, `getElementById()` returns `null` and breaks event listeners[cite: 1, 3].
+* **Following Requirements:** Realized the importance of matching required button labels like **"Add to Cart"** instead of guessing names like "Add Item"[cite: 1].
+* **Proper HTML Structure:** Learned to keep interactive buttons inside proper containers instead of wrapping them in text tags like `<p>`[cite: 1].
 
-* `getElementById()`
-* `innerText`
-* `style.display`
-* `addEventListener()`
-* `.value`
-* `.length`
-* `insertRow()`
+---
 
 ## How to Run
 
-Open `index.html` in a browser.
+1. Clone or download this project.
+2. Open `index.html` in your web browser.
